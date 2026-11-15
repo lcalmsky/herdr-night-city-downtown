@@ -1,0 +1,125 @@
+{
+  "id": "root",
+  "type": "column",
+  "theme": "night-city-downtown",
+  "preview": "layouts/night-city-downtown.png",
+  "background": "#0a0718",
+  "terminal_padding": [
+    12,
+    12
+  ],
+  "titlebar": "none",
+  "traffic_lights": [
+    16,
+    15
+  ],
+  "resizable": false,
+  "children": [
+    {
+      "id": "top",
+      "type": "block",
+      "size": {
+        "px": 44
+      },
+      "window_drag": true,
+      "content": {
+        "mod": "night-city-tabs"
+      }
+    },
+    {
+      "id": "street",
+      "type": "block",
+      "size": {
+        "px": 340
+      },
+      "min": 200,
+      "max": 400,
+      "content": {
+        "mod": "night-city-street"
+      }
+    },
+    {
+      "id": "work",
+      "type": "row",
+      "padding": [
+        12,
+        12
+      ],
+      "gap": 12,
+      "children": [
+        {
+          "id": "main",
+          "type": "block",
+          "content": {
+            "tab": "active",
+            "pane": {
+              "gap": 12,
+              "radius": 10,
+              "background": "#0e0b1d",
+              "lone": true,
+              "border": {
+                "width": 1,
+                "color": "#2a2348"
+              },
+              "focus": {
+                "width": 1,
+                "color": "#d8b25c"
+              },
+              "header": {
+                "content": {
+                  "mod": "night-city-pane"
+                },
+                "height": 30,
+                "position": "top",
+                "reveal": "always"
+              }
+            }
+          }
+        },
+        {
+          "id": "panel",
+          "type": "column",
+          "hidden": true,
+          "size": {
+            "px": 368
+          },
+          "min": 280,
+          "max": 900,
+          "children": [
+            {
+              "id": "panel-body",
+              "type": "stack",
+              "active": "files",
+              "children": [
+                {
+                  "id": "files",
+                  "type": "block",
+                  "content": {
+                    "mod": "files"
+                  }
+                },
+                {
+                  "id": "changes",
+                  "type": "block",
+                  "content": {
+                    "mod": "changes"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "plates",
+      "type": "block",
+      "size": {
+        "px": 48
+      },
+      "content": {
+        "mod": "night-city-plates"
+      }
+    }
+  ]
+}

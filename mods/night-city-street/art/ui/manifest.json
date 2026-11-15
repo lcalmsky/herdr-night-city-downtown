@@ -1,0 +1,4359 @@
+{
+  "palette": {
+    "ink": "#d8d0e2",
+    "paper": "#1f1a36",
+    "dark": "#110d22",
+    "neon": {
+      "pink": "#ec6fa2",
+      "cyan": "#5fd0e6",
+      "mustard": "#d8b25c",
+      "violet": "#a98bf0"
+    },
+    "status": {
+      "working": "#5fd0e6",
+      "blocked": "#ec6fa2",
+      "done": "#d8b25c",
+      "idle": "#a98bf0",
+      "alert": "#d07a66"
+    }
+  },
+  "notes": {
+    "icons": "Monochrome 16×16, stroke currentColor 1.3 — tint with svg(path).text_color(colour), like inkpaw icons.",
+    "icons-neon": "20×20 lit versions in four colours for image(); the 2px border holds the glow.",
+    "nineSlice": "panel/frame/<colour>/{tl,t,tr,l,r,bl,b,br}.svg — 12×12; tile t/b/l/r, corners at the ends.",
+    "tabs": "tab-left + tab-mid × n + tab-right; overlay the -lit-<colour> pieces on the active tab; hang from tabs/wire.svg with tabs/clip.svg.",
+    "pairs": "Files ending -a/-b are two poses of one thing: cross-fade their opacity."
+  },
+  "groups": [
+    "icons",
+    "icons-neon",
+    "scene",
+    "tabs",
+    "panel"
+  ],
+  "files": [
+    {
+      "file": "icons/close.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "pane header: close — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/close.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: close — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/close.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: close — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/close.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: close — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/close.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: close — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/split-down.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "pane header: split below — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/split-down.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: split below — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/split-down.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: split below — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/split-down.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: split below — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/split-down.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: split below — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/split-right.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "pane header: split right — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/split-right.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: split right — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/split-right.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: split right — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/split-right.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: split right — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/split-right.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: split right — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/zoom.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "pane header: zoom — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/zoom.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: zoom — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/zoom.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: zoom — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/zoom.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: zoom — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/zoom.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: zoom — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/unzoom.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "pane header: unzoom — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/unzoom.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: unzoom — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/unzoom.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: unzoom — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/unzoom.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: unzoom — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/unzoom.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pane header: unzoom — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/win-close.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "window: close — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/win-close.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: close — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/win-close.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: close — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/win-close.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: close — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/win-close.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: close — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/win-max.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "window: maximise — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/win-max.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: maximise — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/win-max.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: maximise — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/win-max.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: maximise — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/win-max.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: maximise — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/win-min.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "window: minimise — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/win-min.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: minimise — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/win-min.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: minimise — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/win-min.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: minimise — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/win-min.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: minimise — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/win-restore.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "window: restore — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/win-restore.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: restore — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/win-restore.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: restore — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/win-restore.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: restore — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/win-restore.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "window: restore — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/pencil.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "popup: edit — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/pencil.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "popup: edit — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/pencil.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "popup: edit — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/pencil.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "popup: edit — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/pencil.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "popup: edit — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/reset.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "popup: reset — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/reset.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "popup: reset — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/reset.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "popup: reset — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/reset.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "popup: reset — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/reset.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "popup: reset — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/plus.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "new space / tab — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/plus.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "new space / tab — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/plus.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "new space / tab — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/plus.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "new space / tab — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/plus.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "new space / tab — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/gear.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "settings — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/gear.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "settings — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/gear.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "settings — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/gear.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "settings — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/gear.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "settings — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/search.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "search — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/search.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "search — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/search.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "search — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/search.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "search — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/search.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "search — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/more.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "more / overflow — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/more.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "more / overflow — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/more.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "more / overflow — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/more.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "more / overflow — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/more.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "more / overflow — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/back.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "history back — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/back.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "history back — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/back.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "history back — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/back.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "history back — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/back.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "history back — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/forward.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "history forward — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/forward.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "history forward — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/forward.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "history forward — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/forward.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "history forward — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/forward.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "history forward — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/up.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "collapse — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/up.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "collapse — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/up.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "collapse — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/up.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "collapse — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/up.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "collapse — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/down.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "expand — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/down.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "expand — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/down.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "expand — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/down.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "expand — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/down.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "expand — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/check.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "done — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/check.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "done — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/check.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "done — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/check.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "done — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/check.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "done — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/alert.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "needs you / warning — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/alert.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "needs you / warning — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/alert.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "needs you / warning — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/alert.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "needs you / warning — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/alert.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "needs you / warning — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/hand.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "status: blocked (raise hand) — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/hand.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: blocked (raise hand) — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/hand.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: blocked (raise hand) — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/hand.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: blocked (raise hand) — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/hand.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: blocked (raise hand) — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/bolt.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "status: working — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/bolt.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: working — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/bolt.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: working — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/bolt.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: working — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/bolt.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: working — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/spark.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "status: working / new — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/spark.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: working / new — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/spark.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: working / new — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/spark.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: working / new — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/spark.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: working / new — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/moon.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "status: idle — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/moon.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: idle — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/moon.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: idle — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/moon.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: idle — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/moon.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: idle — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/zzz.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "status: sleeping — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/zzz.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: sleeping — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/zzz.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: sleeping — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/zzz.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: sleeping — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/zzz.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: sleeping — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/mail.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "status: unread result — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/mail.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: unread result — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/mail.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: unread result — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/mail.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: unread result — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/mail.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "status: unread result — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/bell.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "notifications — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/bell.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "notifications — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/bell.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "notifications — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/bell.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "notifications — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/bell.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "notifications — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/pin.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "location / where — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/pin.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "location / where — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/pin.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "location / where — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/pin.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "location / where — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/pin.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "location / where — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/link.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "link / PR link — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/link.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "link / PR link — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/link.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "link / PR link — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/link.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "link / PR link — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/link.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "link / PR link — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/folder.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "files / cwd — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/folder.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "files / cwd — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/folder.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "files / cwd — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/folder.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "files / cwd — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/folder.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "files / cwd — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/terminal.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "terminal pane — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/terminal.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "terminal pane — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/terminal.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "terminal pane — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/terminal.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "terminal pane — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/terminal.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "terminal pane — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/refresh.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "refresh / retry — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/refresh.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "refresh / retry — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/refresh.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "refresh / retry — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/refresh.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "refresh / retry — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/refresh.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "refresh / retry — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/eye.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "viewed / watch — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/eye.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "viewed / watch — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/eye.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "viewed / watch — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/eye.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "viewed / watch — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/eye.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "viewed / watch — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/clock.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "elapsed / eta — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/clock.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "elapsed / eta — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/clock.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "elapsed / eta — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/clock.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "elapsed / eta — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/clock.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "elapsed / eta — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/user.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "account — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/user.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "account — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/user.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "account — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/user.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "account — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/user.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "account — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/users.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "crew / accounts — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/users.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "crew / accounts — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/users.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "crew / accounts — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/users.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "crew / accounts — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/users.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "crew / accounts — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/branch.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "git branch / repo — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/branch.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "git branch / repo — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/branch.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "git branch / repo — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/branch.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "git branch / repo — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/branch.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "git branch / repo — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/pr.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "pull request — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/pr.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pull request — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/pr.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pull request — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/pr.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pull request — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/pr.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "pull request — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/copy.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "copy — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/copy.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "copy — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/copy.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "copy — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/copy.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "copy — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/copy.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "copy — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/trash.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "delete / dismiss — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/trash.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "delete / dismiss — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/trash.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "delete / dismiss — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/trash.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "delete / dismiss — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/trash.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "delete / dismiss — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/filter.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "filter chips — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/filter.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "filter chips — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/filter.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "filter chips — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/filter.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "filter chips — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/filter.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "filter chips — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/list.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "steps / list — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/list.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "steps / list — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/list.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "steps / list — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/list.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "steps / list — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/list.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "steps / list — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/grid.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "layout / spaces — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/grid.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "layout / spaces — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/grid.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "layout / spaces — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/grid.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "layout / spaces — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/grid.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "layout / spaces — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/chat.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "last message / reply — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/chat.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "last message / reply — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/chat.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "last message / reply — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/chat.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "last message / reply — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/chat.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "last message / reply — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/undo.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "undo notice — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/undo.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "undo notice — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/undo.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "undo notice — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/undo.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "undo notice — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/undo.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "undo notice — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/ticket.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "ticket key — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/ticket.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "ticket key — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/ticket.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "ticket key — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/ticket.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "ticket key — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/ticket.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "ticket key — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/coffee.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "break / snooze — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/coffee.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "break / snooze — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/coffee.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "break / snooze — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/coffee.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "break / snooze — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/coffee.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "break / snooze — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/key.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "keys legend — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/key.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "keys legend — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/key.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "keys legend — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/key.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "keys legend — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/key.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "keys legend — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "icons/globe.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ],
+      "group": "icons",
+      "use": "browser / page — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "icons-neon/pink/globe.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "browser / page — lit neon (pink), draw with image()"
+    },
+    {
+      "file": "icons-neon/cyan/globe.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "browser / page — lit neon (cyan), draw with image()"
+    },
+    {
+      "file": "icons-neon/mustard/globe.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "browser / page — lit neon (mustard), draw with image()"
+    },
+    {
+      "file": "icons-neon/violet/globe.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "icons-neon",
+      "use": "browser / page — lit neon (violet), draw with image()"
+    },
+    {
+      "file": "scene/sign-hang.svg",
+      "w": 56,
+      "h": 22,
+      "anchor": [
+        28,
+        0
+      ],
+      "group": "scene",
+      "use": "space name plate hanging under a bracket (mod writes the name)"
+    },
+    {
+      "file": "scene/sign-hang-lit-pink.svg",
+      "w": 56,
+      "h": 22,
+      "anchor": [
+        28,
+        0
+      ],
+      "group": "scene",
+      "use": "overlay on sign-hang: active space (pink)"
+    },
+    {
+      "file": "scene/sign-hang-lit-cyan.svg",
+      "w": 56,
+      "h": 22,
+      "anchor": [
+        28,
+        0
+      ],
+      "group": "scene",
+      "use": "overlay on sign-hang: active space (cyan)"
+    },
+    {
+      "file": "scene/sign-hang-lit-mustard.svg",
+      "w": 56,
+      "h": 22,
+      "anchor": [
+        28,
+        0
+      ],
+      "group": "scene",
+      "use": "overlay on sign-hang: active space (mustard)"
+    },
+    {
+      "file": "scene/sign-hang-lit-violet.svg",
+      "w": 56,
+      "h": 22,
+      "anchor": [
+        28,
+        0
+      ],
+      "group": "scene",
+      "use": "overlay on sign-hang: active space (violet)"
+    },
+    {
+      "file": "scene/sign-plaque.svg",
+      "w": 56,
+      "h": 14,
+      "anchor": [
+        28,
+        7
+      ],
+      "group": "scene",
+      "use": "street-name plaque for a space line (enamel blue, white rim)"
+    },
+    {
+      "file": "scene/sign-more.svg",
+      "w": 22,
+      "h": 12,
+      "anchor": [
+        11,
+        6
+      ],
+      "group": "scene",
+      "use": "\"+N more\" tag"
+    },
+    {
+      "file": "scene/search-sign.svg",
+      "w": 132,
+      "h": 32,
+      "anchor": [
+        66,
+        16
+      ],
+      "group": "scene",
+      "use": "search board (mod writes the query after the lens)"
+    },
+    {
+      "file": "scene/search-sign-lit.svg",
+      "w": 132,
+      "h": 32,
+      "anchor": [
+        66,
+        16
+      ],
+      "group": "scene",
+      "use": "overlay on search-sign while typing"
+    },
+    {
+      "file": "scene/post.svg",
+      "w": 10,
+      "h": 58,
+      "anchor": [
+        5,
+        58
+      ],
+      "group": "scene",
+      "use": "sign post (holds post-plus / post-gear plates)"
+    },
+    {
+      "file": "scene/post-plus.svg",
+      "w": 34,
+      "h": 16,
+      "anchor": [
+        5,
+        8
+      ],
+      "group": "scene",
+      "use": "plate on the post: new space"
+    },
+    {
+      "file": "scene/post-gear.svg",
+      "w": 34,
+      "h": 16,
+      "anchor": [
+        5,
+        8
+      ],
+      "group": "scene",
+      "use": "plate on the post: settings"
+    },
+    {
+      "file": "scene/link-wire.svg",
+      "w": 30,
+      "h": 16,
+      "anchor": [
+        0,
+        4
+      ],
+      "group": "scene",
+      "use": "tileable overhead wire between buildings of the same repo"
+    },
+    {
+      "file": "scene/link-bulbs.svg",
+      "w": 30,
+      "h": 16,
+      "anchor": [
+        0,
+        4
+      ],
+      "group": "scene",
+      "use": "tileable wire with bulbs (same repo, lit)"
+    },
+    {
+      "file": "scene/crosswalk.svg",
+      "w": 30,
+      "h": 8,
+      "anchor": [
+        0,
+        4
+      ],
+      "group": "scene",
+      "use": "tileable crosswalk stripes on the ground (alternative repo link)"
+    },
+    {
+      "file": "scene/banner-a.svg",
+      "w": 20,
+      "h": 26,
+      "anchor": [
+        3,
+        2
+      ],
+      "group": "scene",
+      "use": "lamp-post banner, swing pose a (cross-fade a↔b)"
+    },
+    {
+      "file": "scene/banner-b.svg",
+      "w": 20,
+      "h": 26,
+      "anchor": [
+        3,
+        2
+      ],
+      "group": "scene",
+      "use": "lamp-post banner, swing pose b (cross-fade a↔b)"
+    },
+    {
+      "file": "scene/flyer.svg",
+      "w": 128,
+      "h": 112,
+      "anchor": [
+        64,
+        56
+      ],
+      "group": "scene",
+      "use": "tooltip card: a flyer taped to a wall (mod writes text inside)"
+    },
+    {
+      "file": "scene/cursor-glow-pink.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "scene",
+      "use": "selection cursor glow (pink), pulse its opacity"
+    },
+    {
+      "file": "scene/cursor-glow-cyan.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "scene",
+      "use": "selection cursor glow (cyan), pulse its opacity"
+    },
+    {
+      "file": "scene/cursor-glow-mustard.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "scene",
+      "use": "selection cursor glow (mustard), pulse its opacity"
+    },
+    {
+      "file": "scene/cursor-glow-violet.svg",
+      "w": 20,
+      "h": 20,
+      "anchor": [
+        10,
+        10
+      ],
+      "group": "scene",
+      "use": "selection cursor glow (violet), pulse its opacity"
+    },
+    {
+      "file": "scene/spotlight.svg",
+      "w": 60,
+      "h": 90,
+      "anchor": [
+        30,
+        90
+      ],
+      "group": "scene",
+      "use": "spotlight cone on the selected building or person"
+    },
+    {
+      "file": "scene/marker-working.svg",
+      "w": 22,
+      "h": 28,
+      "anchor": [
+        11,
+        28
+      ],
+      "group": "scene",
+      "use": "status marker above a person or building: working"
+    },
+    {
+      "file": "scene/marker-blocked.svg",
+      "w": 22,
+      "h": 28,
+      "anchor": [
+        11,
+        28
+      ],
+      "group": "scene",
+      "use": "status marker above a person or building: blocked"
+    },
+    {
+      "file": "scene/marker-done.svg",
+      "w": 22,
+      "h": 28,
+      "anchor": [
+        11,
+        28
+      ],
+      "group": "scene",
+      "use": "status marker above a person or building: done"
+    },
+    {
+      "file": "scene/marker-idle.svg",
+      "w": 22,
+      "h": 28,
+      "anchor": [
+        11,
+        28
+      ],
+      "group": "scene",
+      "use": "status marker above a person or building: idle"
+    },
+    {
+      "file": "scene/marker-alert.svg",
+      "w": 22,
+      "h": 28,
+      "anchor": [
+        11,
+        28
+      ],
+      "group": "scene",
+      "use": "status marker above a person or building: alert"
+    },
+    {
+      "file": "scene/count-bubble.svg",
+      "w": 18,
+      "h": 18,
+      "anchor": [
+        9,
+        9
+      ],
+      "group": "scene",
+      "use": "round count badge (mod writes the number)"
+    },
+    {
+      "file": "tabs/wire.svg",
+      "w": 40,
+      "h": 12,
+      "anchor": [
+        0,
+        3
+      ],
+      "group": "tabs",
+      "use": "tileable wire the tabs hang from"
+    },
+    {
+      "file": "tabs/tab-left.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "tab plate left piece (repeat mid for width; mod writes the label)"
+    },
+    {
+      "file": "tabs/tab-left-lit-pink.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, left piece (pink)"
+    },
+    {
+      "file": "tabs/tab-left-lit-cyan.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, left piece (cyan)"
+    },
+    {
+      "file": "tabs/tab-left-lit-mustard.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, left piece (mustard)"
+    },
+    {
+      "file": "tabs/tab-left-lit-violet.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, left piece (violet)"
+    },
+    {
+      "file": "tabs/tab-mid.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "tab plate mid piece (repeat mid for width; mod writes the label)"
+    },
+    {
+      "file": "tabs/tab-mid-lit-pink.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, mid piece (pink)"
+    },
+    {
+      "file": "tabs/tab-mid-lit-cyan.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, mid piece (cyan)"
+    },
+    {
+      "file": "tabs/tab-mid-lit-mustard.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, mid piece (mustard)"
+    },
+    {
+      "file": "tabs/tab-mid-lit-violet.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, mid piece (violet)"
+    },
+    {
+      "file": "tabs/tab-right.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "tab plate right piece (repeat mid for width; mod writes the label)"
+    },
+    {
+      "file": "tabs/tab-right-lit-pink.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, right piece (pink)"
+    },
+    {
+      "file": "tabs/tab-right-lit-cyan.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, right piece (cyan)"
+    },
+    {
+      "file": "tabs/tab-right-lit-mustard.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, right piece (mustard)"
+    },
+    {
+      "file": "tabs/tab-right-lit-violet.svg",
+      "w": 8,
+      "h": 24,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "tabs",
+      "use": "active tab neon rim, right piece (violet)"
+    },
+    {
+      "file": "tabs/clip.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        6,
+        0
+      ],
+      "group": "tabs",
+      "use": "hook that hangs a tab on the wire — monochrome, tint with svg().text_color()"
+    },
+    {
+      "file": "tabs/dot-working.svg",
+      "w": 10,
+      "h": 10,
+      "anchor": [
+        5,
+        5
+      ],
+      "group": "tabs",
+      "use": "tab status dot: working"
+    },
+    {
+      "file": "tabs/dot-blocked.svg",
+      "w": 10,
+      "h": 10,
+      "anchor": [
+        5,
+        5
+      ],
+      "group": "tabs",
+      "use": "tab status dot: blocked"
+    },
+    {
+      "file": "tabs/dot-done.svg",
+      "w": 10,
+      "h": 10,
+      "anchor": [
+        5,
+        5
+      ],
+      "group": "tabs",
+      "use": "tab status dot: done"
+    },
+    {
+      "file": "tabs/dot-idle.svg",
+      "w": 10,
+      "h": 10,
+      "anchor": [
+        5,
+        5
+      ],
+      "group": "tabs",
+      "use": "tab status dot: idle"
+    },
+    {
+      "file": "panel/faces/suit.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"suit\" — normal"
+    },
+    {
+      "file": "panel/faces/suit_tired.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"suit\" — tired"
+    },
+    {
+      "file": "panel/faces/suit_blocked.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"suit\" — blocked"
+    },
+    {
+      "file": "panel/faces/suit_done.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"suit\" — done"
+    },
+    {
+      "file": "panel/faces/suit_idle.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"suit\" — idle"
+    },
+    {
+      "file": "panel/faces/dress.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"dress\" — normal"
+    },
+    {
+      "file": "panel/faces/dress_tired.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"dress\" — tired"
+    },
+    {
+      "file": "panel/faces/dress_blocked.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"dress\" — blocked"
+    },
+    {
+      "file": "panel/faces/dress_done.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"dress\" — done"
+    },
+    {
+      "file": "panel/faces/dress_idle.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"dress\" — idle"
+    },
+    {
+      "file": "panel/faces/hoodie.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"hoodie\" — normal"
+    },
+    {
+      "file": "panel/faces/hoodie_tired.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"hoodie\" — tired"
+    },
+    {
+      "file": "panel/faces/hoodie_blocked.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"hoodie\" — blocked"
+    },
+    {
+      "file": "panel/faces/hoodie_done.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"hoodie\" — done"
+    },
+    {
+      "file": "panel/faces/hoodie_idle.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"hoodie\" — idle"
+    },
+    {
+      "file": "panel/faces/shopper.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"shopper\" — normal"
+    },
+    {
+      "file": "panel/faces/shopper_tired.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"shopper\" — tired"
+    },
+    {
+      "file": "panel/faces/shopper_blocked.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"shopper\" — blocked"
+    },
+    {
+      "file": "panel/faces/shopper_done.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"shopper\" — done"
+    },
+    {
+      "file": "panel/faces/shopper_idle.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"shopper\" — idle"
+    },
+    {
+      "file": "panel/faces/phone.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"phone\" — normal"
+    },
+    {
+      "file": "panel/faces/phone_tired.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"phone\" — tired"
+    },
+    {
+      "file": "panel/faces/phone_blocked.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"phone\" — blocked"
+    },
+    {
+      "file": "panel/faces/phone_done.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"phone\" — done"
+    },
+    {
+      "file": "panel/faces/phone_idle.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"phone\" — idle"
+    },
+    {
+      "file": "panel/faces/kid.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"kid\" — normal"
+    },
+    {
+      "file": "panel/faces/kid_tired.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"kid\" — tired"
+    },
+    {
+      "file": "panel/faces/kid_blocked.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"kid\" — blocked"
+    },
+    {
+      "file": "panel/faces/kid_done.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"kid\" — done"
+    },
+    {
+      "file": "panel/faces/kid_idle.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"kid\" — idle"
+    },
+    {
+      "file": "panel/faces/puffer.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"puffer\" — normal"
+    },
+    {
+      "file": "panel/faces/puffer_tired.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"puffer\" — tired"
+    },
+    {
+      "file": "panel/faces/puffer_blocked.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"puffer\" — blocked"
+    },
+    {
+      "file": "panel/faces/puffer_done.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"puffer\" — done"
+    },
+    {
+      "file": "panel/faces/puffer_idle.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"puffer\" — idle"
+    },
+    {
+      "file": "panel/faces/skirt.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"skirt\" — normal"
+    },
+    {
+      "file": "panel/faces/skirt_tired.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"skirt\" — tired"
+    },
+    {
+      "file": "panel/faces/skirt_blocked.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"skirt\" — blocked"
+    },
+    {
+      "file": "panel/faces/skirt_done.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"skirt\" — done"
+    },
+    {
+      "file": "panel/faces/skirt_idle.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "portrait of \"skirt\" — idle"
+    },
+    {
+      "file": "panel/faces/frame.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "round frame under a portrait"
+    },
+    {
+      "file": "panel/faces/frame-lit-pink.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "neon ring over a portrait (pink) — selected / state colour"
+    },
+    {
+      "file": "panel/faces/frame-lit-cyan.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "neon ring over a portrait (cyan) — selected / state colour"
+    },
+    {
+      "file": "panel/faces/frame-lit-mustard.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "neon ring over a portrait (mustard) — selected / state colour"
+    },
+    {
+      "file": "panel/faces/frame-lit-violet.svg",
+      "w": 64,
+      "h": 64,
+      "anchor": [
+        32,
+        32
+      ],
+      "group": "panel",
+      "use": "neon ring over a portrait (violet) — selected / state colour"
+    },
+    {
+      "file": "panel/frame/pink/tl.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice tl (pink); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/pink/tr.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice tr (pink); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/pink/bl.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice bl (pink); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/pink/br.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice br (pink); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/pink/t.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice t (pink); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/pink/b.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice b (pink); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/pink/l.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice l (pink); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/pink/r.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice r (pink); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/cyan/tl.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice tl (cyan); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/cyan/tr.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice tr (cyan); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/cyan/bl.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice bl (cyan); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/cyan/br.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice br (cyan); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/cyan/t.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice t (cyan); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/cyan/b.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice b (cyan); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/cyan/l.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice l (cyan); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/cyan/r.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice r (cyan); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/mustard/tl.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice tl (mustard); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/mustard/tr.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice tr (mustard); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/mustard/bl.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice bl (mustard); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/mustard/br.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice br (mustard); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/mustard/t.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice t (mustard); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/mustard/b.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice b (mustard); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/mustard/l.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice l (mustard); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/mustard/r.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice r (mustard); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/violet/tl.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice tl (violet); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/violet/tr.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice tr (violet); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/violet/bl.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice bl (violet); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/violet/br.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice br (violet); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/violet/t.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice t (violet); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/violet/b.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice b (violet); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/violet/l.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice l (violet); tile t/b/l/r"
+    },
+    {
+      "file": "panel/frame/violet/r.svg",
+      "w": 12,
+      "h": 12,
+      "anchor": [
+        0,
+        0
+      ],
+      "group": "panel",
+      "use": "neon nine-slice r (violet); tile t/b/l/r"
+    },
+    {
+      "file": "panel/rule-wire.svg",
+      "w": 400,
+      "h": 16,
+      "anchor": [
+        200,
+        8
+      ],
+      "group": "panel",
+      "use": "section divider: a wire with coloured bulbs"
+    },
+    {
+      "file": "panel/rule-neon-pink.svg",
+      "w": 400,
+      "h": 16,
+      "anchor": [
+        200,
+        8
+      ],
+      "group": "panel",
+      "use": "section divider: a single neon tube (pink)"
+    },
+    {
+      "file": "panel/rule-neon-cyan.svg",
+      "w": 400,
+      "h": 16,
+      "anchor": [
+        200,
+        8
+      ],
+      "group": "panel",
+      "use": "section divider: a single neon tube (cyan)"
+    },
+    {
+      "file": "panel/rule-neon-mustard.svg",
+      "w": 400,
+      "h": 16,
+      "anchor": [
+        200,
+        8
+      ],
+      "group": "panel",
+      "use": "section divider: a single neon tube (mustard)"
+    },
+    {
+      "file": "panel/rule-neon-violet.svg",
+      "w": 400,
+      "h": 16,
+      "anchor": [
+        200,
+        8
+      ],
+      "group": "panel",
+      "use": "section divider: a single neon tube (violet)"
+    },
+    {
+      "file": "panel/rule-skyline.svg",
+      "w": 400,
+      "h": 24,
+      "anchor": [
+        200,
+        24
+      ],
+      "group": "panel",
+      "use": "divider / header strip: a thin skyline silhouette"
+    },
+    {
+      "file": "panel/sparkle-a.svg",
+      "w": 24,
+      "h": 24,
+      "anchor": [
+        12,
+        12
+      ],
+      "group": "panel",
+      "use": "corner sparkle, twinkle pose a"
+    },
+    {
+      "file": "panel/sparkle-b.svg",
+      "w": 24,
+      "h": 24,
+      "anchor": [
+        12,
+        12
+      ],
+      "group": "panel",
+      "use": "corner sparkle, twinkle pose b"
+    },
+    {
+      "file": "panel/empty.svg",
+      "w": 240,
+      "h": 120,
+      "anchor": [
+        120,
+        60
+      ],
+      "group": "panel",
+      "use": "empty state: a quiet corner with a lamp, a bench and a closed sign"
+    },
+    {
+      "file": "panel/empty-search.svg",
+      "w": 240,
+      "h": 120,
+      "anchor": [
+        120,
+        60
+      ],
+      "group": "panel",
+      "use": "no search results: a neon lens over a puddle"
+    },
+    {
+      "file": "panel/meter-frame.svg",
+      "w": 120,
+      "h": 18,
+      "anchor": [
+        0,
+        9
+      ],
+      "group": "panel",
+      "use": "usage gauge frame (10 segments fit inside, x = 6 + i × 11)"
+    },
+    {
+      "file": "panel/meter-seg-on-cyan.svg",
+      "w": 10,
+      "h": 12,
+      "anchor": [
+        0,
+        6
+      ],
+      "group": "panel",
+      "use": "usage gauge segment: on-cyan"
+    },
+    {
+      "file": "panel/meter-seg-on-mustard.svg",
+      "w": 10,
+      "h": 12,
+      "anchor": [
+        0,
+        6
+      ],
+      "group": "panel",
+      "use": "usage gauge segment: on-mustard"
+    },
+    {
+      "file": "panel/meter-seg-on-pink.svg",
+      "w": 10,
+      "h": 12,
+      "anchor": [
+        0,
+        6
+      ],
+      "group": "panel",
+      "use": "usage gauge segment: on-pink"
+    },
+    {
+      "file": "panel/meter-seg-off.svg",
+      "w": 10,
+      "h": 12,
+      "anchor": [
+        0,
+        6
+      ],
+      "group": "panel",
+      "use": "usage gauge segment: off"
+    },
+    {
+      "file": "panel/meter-head.svg",
+      "w": 40,
+      "h": 56,
+      "anchor": [
+        20,
+        56
+      ],
+      "group": "panel",
+      "use": "parking-meter illustration for the usage popup header"
+    }
+  ]
+}

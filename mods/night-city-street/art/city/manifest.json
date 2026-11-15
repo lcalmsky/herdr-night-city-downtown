@@ -1,0 +1,2508 @@
+{
+  "files": [
+    {
+      "file": "bg/sky.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "bg/backrow.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "bg/ground.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "bg/moon.svg",
+      "w": 96,
+      "h": 96,
+      "anchor": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "bg/star-a.svg",
+      "w": 10,
+      "h": 10,
+      "anchor": [
+        5,
+        5
+      ]
+    },
+    {
+      "file": "bg/star-b.svg",
+      "w": 10,
+      "h": 10,
+      "anchor": [
+        5,
+        5
+      ]
+    },
+    {
+      "file": "bg/cloud-1.svg",
+      "w": 131,
+      "h": 26,
+      "anchor": [
+        65.5,
+        13
+      ]
+    },
+    {
+      "file": "bg/cloud-2.svg",
+      "w": 101,
+      "h": 26,
+      "anchor": [
+        50.5,
+        13
+      ]
+    },
+    {
+      "file": "bg/cloud-3.svg",
+      "w": 161,
+      "h": 26,
+      "anchor": [
+        80.5,
+        13
+      ]
+    },
+    {
+      "file": "bg/plane.svg",
+      "w": 30,
+      "h": 10,
+      "anchor": [
+        15,
+        5
+      ]
+    },
+    {
+      "file": "bg/plane-light.svg",
+      "w": 30,
+      "h": 10,
+      "anchor": [
+        15,
+        5
+      ]
+    },
+    {
+      "file": "bg/glitter-a.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "bg/glitter-b.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "bg/searchlight-a.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "bg/searchlight-b.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "people/suit/walk-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/walk-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/walk-3.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/walk-4.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/walk-1-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/walk-2-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/walk-3-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/walk-4-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/walk-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/walk-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/walk-3.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/walk-4.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/walk-1-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/walk-2-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/walk-3-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/walk-4-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/walk-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/walk-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/walk-3.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/walk-4.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/walk-1-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/walk-2-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/walk-3-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/walk-4-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/walk-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/walk-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/walk-3.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/walk-4.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/walk-1-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/walk-2-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/walk-3-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/walk-4-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/walk-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/walk-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/walk-3.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/walk-4.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/walk-1-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/walk-2-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/walk-3-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/walk-4-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/walk-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/walk-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/walk-3.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/walk-4.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/walk-1-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/walk-2-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/walk-3-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/walk-4-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/walk-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/walk-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/walk-3.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/walk-4.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/walk-1-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/walk-2-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/walk-3-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/walk-4-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/walk-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/walk-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/walk-3.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/walk-4.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/walk-1-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/walk-2-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/walk-3-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/walk-4-left.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/ask-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/suit/ask-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/ask-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/dress/ask-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/ask-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/hoodie/ask-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/ask-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/shopper/ask-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/ask-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/phone/ask-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/ask-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/kid/ask-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/ask-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/puffer/ask-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/ask-1.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "people/skirt/ask-2.svg",
+      "w": 60,
+      "h": 66,
+      "anchor": [
+        30,
+        66
+      ]
+    },
+    {
+      "file": "props/streetlamp.svg",
+      "w": 36,
+      "h": 80,
+      "anchor": [
+        10,
+        80
+      ]
+    },
+    {
+      "file": "props/streetlamp-lit.svg",
+      "w": 36,
+      "h": 80,
+      "anchor": [
+        10,
+        80
+      ]
+    },
+    {
+      "file": "props/tree-1.svg",
+      "w": 51,
+      "h": 68,
+      "anchor": [
+        25.5,
+        68
+      ]
+    },
+    {
+      "file": "props/tree-2.svg",
+      "w": 62,
+      "h": 84,
+      "anchor": [
+        31,
+        84
+      ]
+    },
+    {
+      "file": "props/hydrant.svg",
+      "w": 18,
+      "h": 19,
+      "anchor": [
+        9,
+        19
+      ]
+    },
+    {
+      "file": "props/bench.svg",
+      "w": 38,
+      "h": 21,
+      "anchor": [
+        19,
+        21
+      ]
+    },
+    {
+      "file": "props/bus-stop.svg",
+      "w": 16,
+      "h": 52,
+      "anchor": [
+        8,
+        52
+      ]
+    },
+    {
+      "file": "buildings/building-1/base.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-1/lit.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-1/neon.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-1/neon-bright.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-1/neon-flicker.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-1/glitter-a.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-1/glitter-b.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-1/steam-1.svg",
+      "w": 7,
+      "h": 7,
+      "anchor": [
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "file": "buildings/building-1/steam-2.svg",
+      "w": 11,
+      "h": 11,
+      "anchor": [
+        5.5,
+        5.5
+      ]
+    },
+    {
+      "file": "buildings/building-1/steam-3.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ]
+    },
+    {
+      "file": "buildings/building-1/mailbox.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-1/mailbox-flag.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-2/base.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-2/lit.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-2/neon.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-2/neon-bright.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-2/neon-flicker.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-2/glitter-a.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-2/glitter-b.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-2/steam-1.svg",
+      "w": 7,
+      "h": 7,
+      "anchor": [
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "file": "buildings/building-2/steam-2.svg",
+      "w": 11,
+      "h": 11,
+      "anchor": [
+        5.5,
+        5.5
+      ]
+    },
+    {
+      "file": "buildings/building-2/steam-3.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ]
+    },
+    {
+      "file": "buildings/building-2/mailbox.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-2/mailbox-flag.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-3/base.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-3/lit.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-3/neon.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-3/neon-bright.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-3/neon-flicker.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-3/glitter-a.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-3/glitter-b.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-3/steam-1.svg",
+      "w": 7,
+      "h": 7,
+      "anchor": [
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "file": "buildings/building-3/steam-2.svg",
+      "w": 11,
+      "h": 11,
+      "anchor": [
+        5.5,
+        5.5
+      ]
+    },
+    {
+      "file": "buildings/building-3/steam-3.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ]
+    },
+    {
+      "file": "buildings/building-3/mailbox.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-3/mailbox-flag.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-4/base.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-4/lit.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-4/neon.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-4/neon-bright.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-4/neon-flicker.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-4/glitter-a.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-4/glitter-b.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-4/steam-1.svg",
+      "w": 7,
+      "h": 7,
+      "anchor": [
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "file": "buildings/building-4/steam-2.svg",
+      "w": 11,
+      "h": 11,
+      "anchor": [
+        5.5,
+        5.5
+      ]
+    },
+    {
+      "file": "buildings/building-4/steam-3.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ]
+    },
+    {
+      "file": "buildings/building-4/mailbox.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-4/mailbox-flag.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-5/base.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-5/lit.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-5/neon.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-5/neon-bright.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-5/neon-flicker.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-5/glitter-a.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-5/glitter-b.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-5/steam-1.svg",
+      "w": 7,
+      "h": 7,
+      "anchor": [
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "file": "buildings/building-5/steam-2.svg",
+      "w": 11,
+      "h": 11,
+      "anchor": [
+        5.5,
+        5.5
+      ]
+    },
+    {
+      "file": "buildings/building-5/steam-3.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ]
+    },
+    {
+      "file": "buildings/building-5/mailbox.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-5/mailbox-flag.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-6/base.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-6/lit.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-6/neon.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-6/neon-bright.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-6/neon-flicker.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-6/glitter-a.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-6/glitter-b.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-6/steam-1.svg",
+      "w": 7,
+      "h": 7,
+      "anchor": [
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "file": "buildings/building-6/steam-2.svg",
+      "w": 11,
+      "h": 11,
+      "anchor": [
+        5.5,
+        5.5
+      ]
+    },
+    {
+      "file": "buildings/building-6/steam-3.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ]
+    },
+    {
+      "file": "buildings/building-6/mailbox.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-6/mailbox-flag.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-7/base.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-7/lit.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-7/neon.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-7/neon-bright.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-7/neon-flicker.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-7/glitter-a.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-7/glitter-b.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-7/steam-1.svg",
+      "w": 7,
+      "h": 7,
+      "anchor": [
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "file": "buildings/building-7/steam-2.svg",
+      "w": 11,
+      "h": 11,
+      "anchor": [
+        5.5,
+        5.5
+      ]
+    },
+    {
+      "file": "buildings/building-7/steam-3.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ]
+    },
+    {
+      "file": "buildings/building-7/mailbox.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-7/mailbox-flag.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-8/base.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-8/lit.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-8/neon.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-8/neon-bright.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-8/neon-flicker.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-8/glitter-a.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-8/glitter-b.svg",
+      "w": 180,
+      "h": 150,
+      "anchor": [
+        90,
+        150
+      ]
+    },
+    {
+      "file": "buildings/building-8/steam-1.svg",
+      "w": 7,
+      "h": 7,
+      "anchor": [
+        3.5,
+        3.5
+      ]
+    },
+    {
+      "file": "buildings/building-8/steam-2.svg",
+      "w": 11,
+      "h": 11,
+      "anchor": [
+        5.5,
+        5.5
+      ]
+    },
+    {
+      "file": "buildings/building-8/steam-3.svg",
+      "w": 16,
+      "h": 16,
+      "anchor": [
+        8,
+        8
+      ]
+    },
+    {
+      "file": "buildings/building-8/mailbox.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "buildings/building-8/mailbox-flag.svg",
+      "w": 24,
+      "h": 32,
+      "anchor": [
+        7.2,
+        32
+      ]
+    },
+    {
+      "file": "bg/reflections-a.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "bg/reflections-b.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "fx/gate.svg",
+      "w": 270,
+      "h": 124,
+      "anchor": [
+        135,
+        124
+      ]
+    },
+    {
+      "file": "fx/gate-neon-a.svg",
+      "w": 270,
+      "h": 124,
+      "anchor": [
+        135,
+        124
+      ]
+    },
+    {
+      "file": "fx/gate-neon-b.svg",
+      "w": 270,
+      "h": 124,
+      "anchor": [
+        135,
+        124
+      ]
+    },
+    {
+      "file": "fx/screen.svg",
+      "w": 76,
+      "h": 50,
+      "anchor": [
+        38,
+        50
+      ]
+    },
+    {
+      "file": "fx/screen-1.svg",
+      "w": 76,
+      "h": 50,
+      "anchor": [
+        38,
+        50
+      ]
+    },
+    {
+      "file": "fx/screen-2.svg",
+      "w": 76,
+      "h": 50,
+      "anchor": [
+        38,
+        50
+      ]
+    },
+    {
+      "file": "fx/screen-3.svg",
+      "w": 76,
+      "h": 50,
+      "anchor": [
+        38,
+        50
+      ]
+    },
+    {
+      "file": "fx/screen-4.svg",
+      "w": 76,
+      "h": 50,
+      "anchor": [
+        38,
+        50
+      ]
+    },
+    {
+      "file": "fx/screen-glow.svg",
+      "w": 140,
+      "h": 90,
+      "anchor": [
+        70,
+        70
+      ]
+    },
+    {
+      "file": "fx/marquee.svg",
+      "w": 92,
+      "h": 26,
+      "anchor": [
+        46,
+        26
+      ]
+    },
+    {
+      "file": "fx/marquee-a.svg",
+      "w": 92,
+      "h": 26,
+      "anchor": [
+        46,
+        26
+      ]
+    },
+    {
+      "file": "fx/marquee-b.svg",
+      "w": 92,
+      "h": 26,
+      "anchor": [
+        46,
+        26
+      ]
+    },
+    {
+      "file": "fx/garland-a.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "fx/garland-b.svg",
+      "w": 1600,
+      "h": 200,
+      "anchor": [
+        800,
+        100
+      ]
+    },
+    {
+      "file": "fx/stall.svg",
+      "w": 100,
+      "h": 76,
+      "anchor": [
+        50,
+        76
+      ]
+    },
+    {
+      "file": "fx/stall-light-a.svg",
+      "w": 100,
+      "h": 76,
+      "anchor": [
+        50,
+        76
+      ]
+    },
+    {
+      "file": "fx/stall-light-b.svg",
+      "w": 100,
+      "h": 76,
+      "anchor": [
+        50,
+        76
+      ]
+    },
+    {
+      "file": "fx/stall-steam-a.svg",
+      "w": 100,
+      "h": 76,
+      "anchor": [
+        50,
+        76
+      ]
+    },
+    {
+      "file": "fx/stall-steam-b.svg",
+      "w": 100,
+      "h": 76,
+      "anchor": [
+        50,
+        76
+      ]
+    },
+    {
+      "file": "fx/glow.svg",
+      "w": 96,
+      "h": 96,
+      "anchor": [
+        48,
+        48
+      ]
+    },
+    {
+      "file": "fx/z.svg",
+      "w": 10,
+      "h": 12,
+      "anchor": [
+        5,
+        6
+      ]
+    },
+    {
+      "file": "fx/bubble-left.svg",
+      "w": 8,
+      "h": 22,
+      "anchor": [
+        4,
+        11
+      ]
+    },
+    {
+      "file": "fx/bubble-mid.svg",
+      "w": 8,
+      "h": 22,
+      "anchor": [
+        4,
+        11
+      ]
+    },
+    {
+      "file": "fx/bubble-right.svg",
+      "w": 8,
+      "h": 22,
+      "anchor": [
+        4,
+        11
+      ]
+    },
+    {
+      "file": "fx/bubble-tail.svg",
+      "w": 10,
+      "h": 10,
+      "anchor": [
+        5,
+        0
+      ]
+    }
+  ],
+  "layout": {
+    "groundY": 167,
+    "baseY": 158,
+    "buildings": [
+      {
+        "id": "building-1",
+        "x": 118,
+        "door": [
+          118,
+          158
+        ],
+        "vent": [
+          83.28,
+          27
+        ],
+        "mailbox": [
+          52,
+          162
+        ]
+      },
+      {
+        "id": "building-2",
+        "x": 270,
+        "door": [
+          270,
+          158
+        ],
+        "vent": [
+          290.8,
+          51
+        ],
+        "mailbox": [
+          214,
+          162
+        ]
+      },
+      {
+        "id": "building-3",
+        "x": 430,
+        "door": [
+          430,
+          158
+        ],
+        "vent": [
+          404.4,
+          31
+        ],
+        "mailbox": [
+          362,
+          162
+        ]
+      },
+      {
+        "id": "building-4",
+        "x": 590,
+        "door": [
+          590,
+          158
+        ],
+        "vent": [
+          616.88,
+          41
+        ],
+        "mailbox": [
+          530,
+          162
+        ]
+      },
+      {
+        "id": "building-5",
+        "x": 1010,
+        "door": [
+          1010,
+          158
+        ],
+        "vent": [
+          981.2,
+          35
+        ],
+        "mailbox": [
+          946,
+          162
+        ]
+      },
+      {
+        "id": "building-6",
+        "x": 1168,
+        "door": [
+          1168,
+          158
+        ],
+        "vent": [
+          1196.08,
+          19
+        ],
+        "mailbox": [
+          1110,
+          162
+        ]
+      },
+      {
+        "id": "building-7",
+        "x": 1328,
+        "door": [
+          1328,
+          158
+        ],
+        "vent": [
+          1353.2,
+          47
+        ],
+        "mailbox": [
+          1261,
+          162
+        ]
+      },
+      {
+        "id": "building-8",
+        "x": 1484,
+        "door": [
+          1484,
+          158
+        ],
+        "vent": [
+          1460.8,
+          29
+        ],
+        "mailbox": [
+          1422,
+          162
+        ]
+      }
+    ],
+    "stall": [
+      800,
+      164
+    ],
+    "lamps": [
+      {
+        "file": "props/streetlamp.svg",
+        "lit": "props/streetlamp-lit.svg",
+        "x": 352,
+        "y": 162
+      },
+      {
+        "file": "props/streetlamp.svg",
+        "lit": "props/streetlamp-lit.svg",
+        "x": 1250,
+        "y": 162
+      }
+    ],
+    "props": [
+      {
+        "file": "props/tree-1.svg",
+        "x": 24,
+        "y": 162
+      },
+      {
+        "file": "props/tree-2.svg",
+        "x": 1580,
+        "y": 162
+      },
+      {
+        "file": "props/bench.svg",
+        "x": 742,
+        "y": 162
+      },
+      {
+        "file": "props/hydrant.svg",
+        "x": 512,
+        "y": 162
+      }
+    ],
+    "clouds": [
+      {
+        "file": "bg/cloud-1.svg",
+        "x": 240,
+        "y": 34
+      },
+      {
+        "file": "bg/cloud-2.svg",
+        "x": 690,
+        "y": 22
+      },
+      {
+        "file": "bg/cloud-3.svg",
+        "x": 1060,
+        "y": 40
+      },
+      {
+        "file": "bg/cloud-1.svg",
+        "x": 1420,
+        "y": 20
+      }
+    ],
+    "stars": [
+      {
+        "x": 8,
+        "y": 48,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 473,
+        "y": 48,
+        "pose": "bg/star-b.svg"
+      },
+      {
+        "x": 381,
+        "y": 31,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 1075,
+        "y": 65,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 253,
+        "y": 17,
+        "pose": "bg/star-b.svg"
+      },
+      {
+        "x": 1035,
+        "y": 29,
+        "pose": "bg/star-b.svg"
+      },
+      {
+        "x": 1461,
+        "y": 27,
+        "pose": "bg/star-b.svg"
+      },
+      {
+        "x": 695,
+        "y": 66,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 374,
+        "y": 47,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 435,
+        "y": 11,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 882,
+        "y": 58,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 384,
+        "y": 50,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 266,
+        "y": 56,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 1317,
+        "y": 21,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 979,
+        "y": 55,
+        "pose": "bg/star-b.svg"
+      },
+      {
+        "x": 584,
+        "y": 16,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 584,
+        "y": 18,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 624,
+        "y": 18,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 1269,
+        "y": 59,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 781,
+        "y": 41,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 837,
+        "y": 39,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 951,
+        "y": 66,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 532,
+        "y": 35,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 592,
+        "y": 38,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 618,
+        "y": 42,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 518,
+        "y": 51,
+        "pose": "bg/star-b.svg"
+      },
+      {
+        "x": 1287,
+        "y": 60,
+        "pose": "bg/star-b.svg"
+      },
+      {
+        "x": 1001,
+        "y": 11,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 549,
+        "y": 15,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 1001,
+        "y": 70,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 271,
+        "y": 40,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 905,
+        "y": 67,
+        "pose": "bg/star-b.svg"
+      },
+      {
+        "x": 104,
+        "y": 19,
+        "pose": "bg/star-a.svg"
+      },
+      {
+        "x": 130,
+        "y": 50,
+        "pose": "bg/star-a.svg"
+      }
+    ],
+    "moon": [
+      880,
+      26
+    ],
+    "plane": {
+      "y": 26
+    },
+    "gate": [
+      800,
+      162
+    ],
+    "screen": [
+      430,
+      92
+    ],
+    "marquee": [
+      1010,
+      130
+    ],
+    "lanes": {
+      "back": {
+        "y": 174,
+        "scale": 0.8
+      },
+      "front": {
+        "y": 198,
+        "scale": 1
+      }
+    },
+    "people": [
+      {
+        "name": "suit",
+        "frames": 4,
+        "speed": 19.35,
+        "period": 1,
+        "w": 60,
+        "h": 66
+      },
+      {
+        "name": "dress",
+        "frames": 4,
+        "speed": 19.35,
+        "period": 1,
+        "w": 60,
+        "h": 66
+      },
+      {
+        "name": "hoodie",
+        "frames": 4,
+        "speed": 19.35,
+        "period": 1,
+        "w": 60,
+        "h": 66
+      },
+      {
+        "name": "shopper",
+        "frames": 4,
+        "speed": 19.35,
+        "period": 1,
+        "w": 60,
+        "h": 66
+      },
+      {
+        "name": "phone",
+        "frames": 4,
+        "speed": 19.35,
+        "period": 1,
+        "w": 60,
+        "h": 66
+      },
+      {
+        "name": "kid",
+        "frames": 4,
+        "speed": 13.94,
+        "period": 1,
+        "w": 60,
+        "h": 66
+      },
+      {
+        "name": "puffer",
+        "frames": 4,
+        "speed": 19.35,
+        "period": 1,
+        "w": 60,
+        "h": 66
+      },
+      {
+        "name": "skirt",
+        "frames": 4,
+        "speed": 19.35,
+        "period": 1,
+        "w": 60,
+        "h": 66
+      }
+    ]
+  },
+  "palette": {
+    "ink": "#d8d0e2",
+    "paper": "#1f1a36",
+    "sky": [
+      "#0a0718",
+      "#150e2c",
+      "#2a1440"
+    ],
+    "scarf": [
+      "#d07a66",
+      "#78bdb5",
+      "#d8b25c"
+    ],
+    "lantern": "#f0a35e",
+    "window": "#f2c47c"
+  }
+}

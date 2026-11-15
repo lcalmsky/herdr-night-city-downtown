@@ -1,0 +1,13 @@
+{
+  "layout:night-city-downtown": {
+    "ctrl-alt-p": "night-city-street.toggle",
+    "ctrl-alt-/": "night-city-street.legend",
+    "ctrl-shift-a": "night-city-plates.accounts",
+    "cmd-=": "night-city-street.font_in",
+    "cmd-+": "night-city-street.font_in",
+    "cmd--": "night-city-street.font_out",
+    "cmd-0": "night-city-street.font_reset",
+    "cmd-[": "night-city-street.back",
+    "cmd-]": "night-city-street.forward"
+  }
+}
