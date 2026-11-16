@@ -129,6 +129,7 @@ export const AWAY_DIM = 0.3;
 // A pick made from the street keeps the street lit, so only a light dim sets the picked walker apart.
 export const PICK_DIM_STREET = 0.2;
 const SEEN_KEY = "night-city.seen";
+const GONE_KEY = "night-city.gone";
 export const NOTICE_KEY = "night-city.notice";
 const r2 = (n) => Math.round(n * 100) / 100;
 const stop = (_event, cx) => cx.stop_propagation();
@@ -185,7 +186,8 @@ export default class Street extends View {
     this.meta = null;
     this.err = null;
     this.scanned = this.demo;
-    this.seen = this.demo ? demoSeen(this.sessions) : this.loadSeen();
+    this.seen = this.demo ? demoSeen(this.sessions) : this.loadKeys(SEEN_KEY);
+    this.gone = this.demo ? [] : this.loadKeys(GONE_KEY);
     this.seats = new Map();
     this.walkers = new Map();
     this.crowd = [];
@@ -247,9 +249,9 @@ export default class Street extends View {
     });
   }
 
-  loadSeen() {
+  loadKeys(storageKey) {
     try {
-      const list = JSON.parse(localStorage.getItem(SEEN_KEY) ?? "[]");
+      const list = JSON.parse(localStorage.getItem(storageKey) ?? "[]");
       return Array.isArray(list) ? list.filter((key) => typeof key === "string") : [];
     } catch {
       return [];
@@ -259,6 +261,11 @@ export default class Street extends View {
   saveSeen() {
     if (this.demo) return;
     try { localStorage.setItem(SEEN_KEY, JSON.stringify(this.seen)); } catch {}
+  }
+
+  saveGone() {
+    if (this.demo) return;
+    try { localStorage.setItem(GONE_KEY, JSON.stringify(this.gone)); } catch {}
   }
 
   poll(cx) {
@@ -304,7 +311,8 @@ export default class Street extends View {
       : { terminals: terminals(), agents: agents(), panes: panes(), spaces: spaces() };
     for (const [id, until] of Object.entries(this.aside)) if (until <= now) delete this.aside[id];
     const all = byUrgency(buildItems({ sessions: this.sessions, meta: this.meta, herdr, now, seen: this.seen }), this.aside, now);
-    const items = all.slice(0, MAX_CAST);
+    const gone = new Set(this.gone);
+    const items = all.filter((item) => !(item.status === "idle" && gone.has(item.ackKey))).slice(0, MAX_CAST);
     const grown = this.updateBlocks(items, now);
     this.seats = assignSeats(this.seats, items.map((item) => item.id), this.blocks * BUILDINGS);
     const housemates = [];
@@ -351,6 +359,8 @@ export default class Street extends View {
       const alive = new Set(all.map((item) => item.ackKey));
       const kept = this.seen.filter((key) => alive.has(key));
       if (kept.length !== this.seen.length) { this.seen = kept; this.saveSeen(); }
+      const keptGone = this.gone.filter((key) => alive.has(key));
+      if (keptGone.length !== this.gone.length) { this.gone = keptGone; this.saveGone(); }
     }
     this.retape(now);
     this.publish();
@@ -573,6 +583,20 @@ export default class Street extends View {
     else if (item.status === "stalled") this.putAside(item);
   }
 
+  // A hidden result comes back on its own: a new result gives the session a new ackKey.
+  hide(item) {
+    if (!item) return;
+    if (item.status === "stalled") return this.putAside(item);
+    if (item.status !== "done") return;
+    this.seen = [...this.seen, item.ackKey];
+    this.saveSeen();
+    this.gone = [...this.gone, item.ackKey];
+    this.saveGone();
+    this.last = { kind: "hide", key: item.ackKey };
+    this.refresh(Date.now());
+    this.flash(words(this.lang).hidden, { undo: true });
+  }
+
   undoLast() {
     const last = this.last;
     if (!last) return;
@@ -585,6 +609,12 @@ export default class Street extends View {
     } else if (last.kind === "aside") {
       delete this.aside[last.id];
       this.flash(t.undoneAside);
+    } else if (last.kind === "hide") {
+      this.gone = this.gone.filter((key) => key !== last.key);
+      this.saveGone();
+      this.seen = this.seen.filter((key) => key !== last.key);
+      this.saveSeen();
+      this.flash(t.undoneHidden);
     }
     this.refresh(Date.now());
   }
@@ -833,6 +863,8 @@ export default class Street extends View {
       this.openOldestPage(cx);
     } else if (name === "read") {
       this.readAt(picked);
+    } else if (name === "hide") {
+      this.hide(picked);
     } else if (name === "undo") {
       this.undoLast();
     } else if (name === "ask" || name === "result") {
@@ -924,7 +956,7 @@ export default class Street extends View {
     } else if (command === "clear") {
       this.select(null);
     } else if (command === "first" || command === "last" || command === "pages" || command === "oldest_page"
-      || command === "read" || command === "undo" || command === "ask" || command === "result"
+      || command === "read" || command === "hide" || command === "undo" || command === "ask" || command === "result"
       || command === "expand" || command === "collapse" || command === "menu" || command === "filter") {
       this.act(command, cx);
     }
@@ -1024,8 +1056,10 @@ export default class Street extends View {
       this.openLegend();
     } else if (key === "/") {
       run("night-city-tabs.search");
-    } else if (key === "m" || key === "backspace") {
+    } else if (key === "m") {
       this.act("read", cx);
+    } else if (key === "backspace") {
+      this.act("hide", cx);
     } else if (key === "space") {
       this.act(mod.shift ? "result" : "ask", cx);
     } else if (key === "down") {

@@ -63,8 +63,9 @@ In the street (while it has the keyboard):
 | `↩` | Go to the picked session's pane |
 | `⇧↩` | Open the picked session's page alerts |
 | `P` | Open the oldest page alert |
-| `M` / `⌫` | Mark a result read, or put a stalled session aside for 10 minutes |
-| `⌘Z` | Undo the last read mark or put-aside |
+| `M` | Mark a result read; it stays on the street, asleep |
+| `⌫` | Clear a result off the street until its next result, or put a stalled session aside for 10 minutes |
+| `⌘Z` | Undo the last read mark, clear or put-aside |
 | `↓` / `↑` | Expand the picked session's checklist steps / scroll back up and close |
 | `⌘↩` | Session menu (`↑` `↓` `↩` `Esc`) |
 | `F` | Cycle the status filter |
