@@ -93,7 +93,7 @@ Night City Downtown is local-first. It reads session files on this machine and r
 - checklist state under `/tmp/deadhd-state` (`$DEADHD_STATE_DIR`) and the checklist `.json` under `/tmp` that its state file names;
 - page alerts under `~/.pulse/pages` (`$PULSE_PAGES_DIR`);
 - the handoff note a session's first prompt points at (`…/.claude/handoff/*.md`);
-- a thread-memory folder set by `NCD_THREAD_SESSIONS` and a per-ticket goals file set by `NCD_GOALS_FILE` (both are read only when the variable is set);
+- a thread-memory folder set by `HERDR_THREAD_SESSIONS` and a per-ticket goals file set by `HERDR_GOALS_FILE` (both are read only when the variable is set);
 - the newest Codex rollout under `~/.codex/sessions`, and Gemini CLI chats under `~/.gemini` (`projects.json` pairs a folder with its chat slot);
 - the processes themselves through `ps` and `lsof` (override with `PULSE_PS` / `PULSE_LSOF`).
 

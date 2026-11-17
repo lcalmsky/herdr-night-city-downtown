@@ -5,7 +5,7 @@
 set -u
 
 TOWER="${XDG_STATE_HOME:-$HOME/.local/state}/herdr-tower"
-# Shared with the control-tower copy: the usage-tap hook writes here.
+# The usage-tap hook writes here.
 STATE="$TOWER/usage"
 # Resolved through a link, since cca is often linked onto PATH away from usage-api.mjs.
 HERE=$(cd "$(dirname "$(readlink -f "$0" 2>/dev/null || printf %s "$0")")" && pwd)
@@ -16,7 +16,7 @@ SHARED="projects history.jsonl file-history todos plans tasks teams paste-cache 
 
 die() { printf 'cca: %s\n' "$*" >&2; exit 1; }
 
-# Exit with a specific code, for the statuses the app and tidemark branch on.
+# Exit with a specific code, for the statuses the app branches on.
 die_as() { code=$1; shift; printf 'cca: %s\n' "$*" >&2; exit "$code"; }
 
 reserved_name() {
@@ -57,7 +57,7 @@ current_account() {
   acct_name "$d"
 }
 
-# The global default the shell hook and tidemark read: the account or model every new session
+# The global default the shell hook and the app read: the account or model every new session
 # starts under. A missing, invalid or since-deleted choice reads as default.
 current_default() {
   name=
@@ -227,7 +227,7 @@ else
   OFF= BOLD= DIM= AMBER= RED=
 fi
 
-# One line of JSON for tidemark: the global default, then every account with its email, both
+# One line of JSON: the global default, then every account with its email, both
 # windows and the most-5h-headroom flag, in the same order and with the same rule as the table.
 cmd_ls_json() {
   gdef=$(current_default)
@@ -808,7 +808,7 @@ cmd_help() {
 cca — Claude Code accounts
 
   cca, cca ls          list accounts with their usage and the most 5h headroom
-  cca ls --json        the same as one line of JSON for tidemark
+  cca ls --json        the same list as one line of JSON
   cca <name> [args…]   run claude under <name>; default means ~/.claude with
                        CLAUDE_CONFIG_DIR unset (cca work -c continues here)
   cca use <name>       make <name> the default for every new session
