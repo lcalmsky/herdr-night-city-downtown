@@ -1,14 +1,25 @@
 import { View, div, image, svg } from "gpui-kit";
-import { Input, InputState } from "gpui-base";
+import { Input, InputState, ScrollHandle } from "gpui-base";
 import {
-  appHome, closeOverlay, exec, focused, home, knownAgents, props, run, setShared, shared, terminals,
+  appHome, closeOverlay, exec, focused, home, knownAgents, props, run, setShared, shared, spaces, terminals,
 } from "herdr";
+import * as herdrApi from "herdr";
 import { ACCOUNTS_KEY, C, MONO, SHARED_KEY, UI_ART, gradient, kbd, segs, dot, icon, neonIcon } from "./neon.js";
 import { demoAgents, demoModel } from "./demo.js";
 
 export const DEFAULT_LAUNCH = "claude";
 export const ACCOUNT_NAME = /^[A-Za-z0-9_-]+$/;
 export const SESSION_ID = /^[0-9a-fA-F-]{36}$/;
+
+export const POPUP_H = 700;
+const POPUP_BORDER = 1;
+const POPUP_PAD = 14;
+const POPUP_HEADER_H = 40;
+const POPUP_FOOTER_H = 18;
+export const LIST_MAX_H = POPUP_H - 2 * POPUP_BORDER - 2 * POPUP_PAD - POPUP_HEADER_H - POPUP_FOOTER_H;
+
+// An older Herdr has no `checking` export, and a named import would take the whole mod down.
+const checking = () => typeof herdrApi.checking === "function" && herdrApi.checking() === true;
 
 export const TEXT = {
   ko: {
@@ -127,7 +138,7 @@ export function continueArgv(target, session, command = DEFAULT_LAUNCH) {
   if (!args) return null;
   const cwd = `'${String(session.cwd).replace(/'/g, "'\\''")}'`;
   const line = model ? launchFor(model, args) : resumeOrStart(name, session.id, command);
-  return ["sh", "-lc", `cd ${cwd} && ${line}`];
+  return ["sh", "-lc", `cd ${cwd} || exit 1; ${line}`];
 }
 
 /** A usage value arrives as a percentage; the meters want 0..1. */
@@ -257,6 +268,7 @@ export function emptyModel() {
 }
 
 export function continueTargets(model) {
+  if (!SESSION_ID.test(model?.session?.id ?? "") || !model?.session?.cwd) return [];
   const targets = [];
   for (const account of model?.accounts ?? []) {
     if (account.name !== model.current) targets.push({ kind: "account", name: account.name, label: account.label });
@@ -298,7 +310,8 @@ export default class Accounts extends View {
     const given = props() ?? {};
     this.demo = given.demo === true;
     this.overlay = given.overlay ?? null;
-    if (this.overlay) setShared(ACCOUNTS_KEY, { overlay: this.overlay });
+    // The street reads this to keep its flyer clear of the popup, the staged demo picture included.
+    if (this.overlay && !checking()) setShared(ACCOUNTS_KEY, { overlay: this.overlay });
     this.model = emptyModel();
     this.allAgents = [];
     this.modelEntries = [];
@@ -309,6 +322,8 @@ export default class Accounts extends View {
     this.error = null;
     this.readError = null;
     this.handle = cx.focus_handle();
+    this.scroll = ScrollHandle.new();
+    this.scrollKey = undefined;
     cx.timer.after(60, () => this.handle.focus());
     if (this.demo) {
       this.allAgents = demoAgents();
@@ -316,6 +331,7 @@ export default class Accounts extends View {
       this.cursor = moveCursor(rowsOf(this.model).length, 0, 0);
       return;
     }
+    if (checking()) return;
     cx.spawn(async (cx) => {
       await this.loadSettings(cx);
       try {
@@ -370,8 +386,11 @@ export default class Accounts extends View {
   }
 
   focusedPid() {
-    const terminal = focused()?.terminal;
+    const here = focused();
+    const terminal = here?.terminal;
     if (!terminal) return null;
+    const machine = spaces().find((space) => space.id === here.space)?.machine ?? null;
+    if (machine !== null) return null;
     const pid = terminals().find((t) => t?.address === terminal)?.foreground?.pid;
     if (Number.isInteger(pid) && pid > 0) return String(pid);
     if (typeof pid === "string" && /^\d+$/.test(pid)) return pid;
@@ -434,7 +453,9 @@ export default class Accounts extends View {
 
   launchAgent(agent, cx) {
     if (agent?.key === "claude") {
-      this.openAgent(this.model.globalDefault, cx);
+      const entry = (this.model.models ?? []).find((model) => model.name === this.model.globalDefault);
+      if (entry) this.openModel(entry, cx);
+      else this.openAgent(this.model.globalDefault, cx);
     } else if (agent?.key === "codex") {
       this.openCodex(this.model.codex.active, cx);
     } else {
@@ -664,6 +685,7 @@ export default class Accounts extends View {
       this.edit = null;
       await this.loadSettings(cx);
       await this.refresh(cx);
+      this.refocus(cx);
     }
   }
 
@@ -794,7 +816,7 @@ export default class Accounts extends View {
     const rows = [];
     if (entry.five) rows.push({ label: "5h", win: entry.five, tint: "cyan" });
     if (entry.seven) rows.push({ label: "week", win: entry.seven, tint: "mustard" });
-    if (entry.fable) rows.push({ label: "fable", win: entry.fable, tint: "violet" });
+    if (entry.fable) rows.push({ label: "fable", win: entry.fable, tint: "pink" });
     const now = Date.now();
     return rows.map((item) =>
       div().h(16).flex().items_center().gap(8)
@@ -966,10 +988,12 @@ export default class Accounts extends View {
     const missing = (this.allAgents ?? []).filter((a) => a.installed === false && a?.name);
 
     const list = [];
+    const indexOf = new Map();
+    const pushRow = (row, element) => { indexOf.set(row.key, list.length); list.push(element); };
     const agents = rows.filter((row) => row.kind === "agent");
     if (agents.length) {
       list.push(this.sectionLabel(L.agents));
-      for (const row of agents) list.push(this.agentRow(row, isFocused(row), L, cx));
+      for (const row of agents) pushRow(row, this.agentRow(row, isFocused(row), L, cx));
       if (missing.length) {
         list.push(div().h(18).flex().items_center().pl(10)
           .child(div().flex_1().min_w(0).truncate().text_size(11).text_color(C.ink3)
@@ -979,55 +1003,62 @@ export default class Accounts extends View {
 
     list.push(this.sectionLabel(L.claude));
     for (const row of rows.filter((r) => r.kind === "account")) {
-      list.push(this.accountRow(row, isFocused(row), L, lang));
+      pushRow(row, this.accountRow(row, isFocused(row), L, lang));
     }
-    list.push(this.commandRow(isFocused(rows.find((r) => r.kind === "command") ?? {}), L, cx));
+    const commandRow = rows.find((r) => r.kind === "command") ?? {};
+    pushRow(commandRow, this.commandRow(isFocused(commandRow), L, cx));
     for (const row of rows.filter((r) => r.kind === "add" && r.target === "claude")) {
-      list.push(this.addRow(row, isFocused(row), L, cx));
+      pushRow(row, this.addRow(row, isFocused(row), L, cx));
     }
 
     list.push(this.sectionLabel(L.codex));
     for (const row of rows.filter((r) => r.kind === "codex")) {
-      list.push(this.codexRow(row, isFocused(row), L, lang));
+      pushRow(row, this.codexRow(row, isFocused(row), L, lang));
     }
     for (const row of rows.filter((r) => r.kind === "add" && r.target === "codex")) {
-      list.push(this.addRow(row, isFocused(row), L, cx));
+      pushRow(row, this.addRow(row, isFocused(row), L, cx));
     }
 
     list.push(this.sectionLabel(L.custom));
     for (const row of rows.filter((r) => r.kind === "model")) {
-      list.push(this.modelRow(row, isFocused(row), L, lang));
+      pushRow(row, this.modelRow(row, isFocused(row), L, lang));
     }
     for (const row of rows.filter((r) => r.kind === "add" && r.target === "model")) {
-      list.push(this.addRow(row, isFocused(row), L, cx));
+      pushRow(row, this.addRow(row, isFocused(row), L, cx));
     }
 
     const continueRows = rows.filter((r) => r.kind === "continue");
     if (continueRows.length) {
       list.push(this.sectionLabel(L.continueAs));
-      for (const row of continueRows) list.push(this.continueRow(row, isFocused(row), L, cx));
+      for (const row of continueRows) pushRow(row, this.continueRow(row, isFocused(row), L, cx));
+    }
+    const cursorKey = rows[this.cursor]?.key ?? null;
+    if (cursorKey !== this.scrollKey) {
+      this.scrollKey = cursorKey;
+      const at = indexOf.get(cursorKey);
+      if (this.scroll && at != null) this.scroll.scroll_to_item(at);
     }
 
     const error = this.error || this.readError;
     const hint = error || this.hintFor(rows[this.cursor], L);
 
     return div().id("night-city-accounts").relative().w(460).bg(C.card)
-      .border(1).border_color(C.line2).rounded(14).p(14)
+      .border(POPUP_BORDER).border_color(C.line2).rounded(14).p(POPUP_PAD)
       .track_focus(this.handle)
       .on_key_down((event, cx) => this.keyDown(event, cx))
       .child(gradient("#1d1838", "#120e25", 160))
       .child(
         div().flex().flex_col()
           .child(
-            div().h(40).flex_none().flex().items_center().justify_between()
+            div().h(POPUP_HEADER_H).flex_none().flex().items_center().justify_between()
               .child(image(`${UI_ART}signs/accounts.svg`).w(101).h(35))
               .child(kbd("esc")),
           )
           .child(
-            div().flex().flex_col().max_h(734).overflow_y_scrollbar().children(list),
+            div().flex().flex_col().max_h(LIST_MAX_H).overflow_y_scrollbar().track_scroll(this.scroll).children(list),
           )
           .child(
-            div().h(18).flex_none().flex().items_center().text_size(11)
+            div().h(POPUP_FOOTER_H).flex_none().flex().items_center().text_size(11)
               .text_color(error ? C.pink : C.ink3)
               .child(hint ?? ""),
           ),

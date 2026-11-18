@@ -1,5 +1,6 @@
 import { View, div, image, svg } from "gpui-kit";
 import { appHome, closeOverlay, exec, focused, nextCommand, openOverlay, panes, props, run, setShared, settings, shared, spaces, terminals } from "herdr";
+import * as herdrApi from "herdr";
 import { ACCOUNTS_KEY, C, SHARED_KEY, UI_ART, clipText, dot, faceOf, icon, segs, textWidth, words } from "./neon.js";
 import { demoCast, demoGroups, demoLang, demoMatch, demoUsage } from "./demo.js";
 
@@ -8,13 +9,24 @@ const MAX_ACCOUNTS = 4;
 const LABEL_CHARS = 18;
 const TICKET = /(?:^|[^A-Za-z0-9])((?:cas|imio|ieis)-\d{1,5})(?![0-9])/i;
 const ACCOUNTS_W = 460;
-const ACCOUNTS_H = 700;
+export const ACCOUNTS_H = 700;
 const PLATES_H = 48;
 const PLATES_PAD = 16;
 const ACCOUNTS_GAP = 6;
 
+// An older Herdr has no `checking` export, and a named import would take the whole mod down.
+const checking = () => typeof herdrApi.checking === "function" && herdrApi.checking() === true;
+
 function cwdOf(terminal) {
   return terminal?.foreground?.cwd || terminal?.cwd || null;
+}
+
+/** The first terminal the space shows and the key its repository is read under, per machine. */
+function cwdKeyOf(space, paneList, byAddress) {
+  const tabs = new Set((space.tabs ?? []).map((tab) => tab.id));
+  const pane = paneList.find((candidate) => candidate.terminal && tabs.has(candidate.tab));
+  const cwd = pane ? cwdOf(byAddress.get(pane.terminal)) : null;
+  return cwd ? { cwd, machine: space.machine ?? null, key: `${space.machine ?? ""}\t${cwd}` } : null;
 }
 
 export function pidText(pid) {
@@ -162,8 +174,6 @@ export function stepCursor(ids, id, delta) {
 export default class NightCityPlates extends View {
   init(_props, cx) {
     this.demo = (props() ?? {}).demo === true;
-    // A crash can leave the popup id behind; without this the first key press would only clear it.
-    if (!this.demo && shared(ACCOUNTS_KEY) != null) setShared(ACCOUNTS_KEY, null);
     this.fire = (name, args) => { if (!this.demo) { if (args === undefined) run(name); else run(name, args); } };
     this.handle = cx.focus_handle();
     // Herdr does not redraw this mod when the keyboard moves to another mod, so the cursor ring needs its own watch.
@@ -194,6 +204,9 @@ export default class NightCityPlates extends View {
       }
       return;
     }
+    if (checking()) return;
+    // A crash can leave the popup id behind; without this the first key press would only clear it.
+    if (shared(ACCOUNTS_KEY) != null) setShared(ACCOUNTS_KEY, null);
     this.readRepos(cx);
     this.readUsage(cx);
     cx.timer.every(REFRESH_MS, (later) => this.readRepos(later));
@@ -286,31 +299,35 @@ export default class NightCityPlates extends View {
     const paneList = panes();
     const byAddress = new Map(terminals().map((terminal) => [terminal.address, terminal]));
     return spaces().map((space) => {
-      const tabs = new Set(space.tabs.map((tab) => tab.id));
-      const pane = paneList.find((candidate) => candidate.terminal && tabs.has(candidate.tab));
-      const cwd = pane ? cwdOf(byAddress.get(pane.terminal)) : null;
-      const repo = this.repos === null ? undefined : cwd ? this.repos[cwd] ?? null : null;
+      const found = cwdKeyOf(space, paneList, byAddress);
+      const repo = this.repos === null ? undefined : found ? this.repos[found.key] ?? null : null;
       return { space, repo };
     });
   }
 
   readRepos(cx) {
     if (this.readingRepos) return;
-    const folders = [...new Set(terminals().map(cwdOf).filter(Boolean))];
-    if (!folders.length) {
+    const paneList = panes();
+    const byAddress = new Map(terminals().map((terminal) => [terminal.address, terminal]));
+    const folders = new Map();
+    for (const space of spaces()) {
+      const found = cwdKeyOf(space, paneList, byAddress);
+      if (found && !folders.has(found.key)) folders.set(found.key, found);
+    }
+    if (!folders.size) {
       this.repos = {};
       return;
     }
     this.readingRepos = true;
     cx.spawn(async (cx) => {
       const next = {};
-      for (const cwd of folders) {
+      for (const [key, { cwd, machine }] of folders) {
         try {
-          const r = await exec("git", ["-C", cwd, "rev-parse", "--path-format=absolute", "--git-common-dir", "--show-toplevel"]);
+          const r = await exec("git", ["-C", cwd, "rev-parse", "--path-format=absolute", "--git-common-dir", "--show-toplevel"], machine ? { on: machine } : undefined);
           const [common, top] = String(r.stdout ?? "").trim().split("\n");
-          next[cwd] = r.code === 0 && common ? { common, base: Boolean(top) && `${top}/.git` === common } : null;
+          next[key] = r.code === 0 && common ? { common, base: Boolean(top) && `${top}/.git` === common } : null;
         } catch {
-          next[cwd] = null;
+          next[key] = null;
         }
       }
       this.repos = next;
@@ -342,6 +359,8 @@ export default class NightCityPlates extends View {
   focusedPid() {
     const here = focused();
     if (!here?.terminal) return null;
+    const machine = spaces().find((space) => space.id === here.space)?.machine ?? null;
+    if (machine !== null) return null;
     const terminal = terminals().find((candidate) => candidate.address === here.terminal);
     return pidText(terminal?.foreground?.pid);
   }

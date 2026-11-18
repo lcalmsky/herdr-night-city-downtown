@@ -1,5 +1,5 @@
 import { View, div, svg, image } from "gpui-kit";
-import { InputState, Input } from "gpui-base";
+import { InputState, Input, ScrollHandle } from "gpui-base";
 import { focused, layout, nextCommand, openOverlay, props, run, setShared, shared, spaces, window } from "herdr";
 import { C, QUERY_KEY, SHARED_KEY, dot, icon, kbd, neonIcon, paneTarget, words } from "./neon.js";
 import { demoLang, demoMatch, demoSpace } from "./demo.js";
@@ -70,6 +70,10 @@ export default class NightCityTabs extends View {
     });
     this.cursor = null;
     this.pressed = null;
+    this.scroll = ScrollHandle.new();
+    this.revealIndex = undefined;
+    this.cursorIndex = -1;
+    this.swipe = { acc: 0, steps: 0, at: 0, last: 0 };
     this.searchFocused = false;
     this.space = undefined;
     this.pending = null;
@@ -91,6 +95,27 @@ export default class NightCityTabs extends View {
         cx.notify();
       }
     });
+  }
+
+  // One tab per wheel notch. A touchpad or smooth-scrolling mouse sends many small events per
+  // gesture: a short swipe or one smoothed notch (about 25 px) switches one tab, a longer swipe
+  // keeps going a tab per 60 px, at most one every 100 ms so each shows.
+  wheel(event) {
+    if (event.delta_lines) {
+      if (event.delta_lines.y) this.fire(event.delta_lines.y > 0 ? "tab.prev" : "tab.next");
+      return;
+    }
+    const s = this.swipe, now = Date.now();
+    // Phases often arrive only as moves (a macOS touchpad included): a pause or a turn starts a new gesture.
+    if (event.touch_phase === "started" || now - s.at > 250 || event.delta.y * s.acc < 0) Object.assign(s, { acc: 0, steps: 0 });
+    s.at = now;
+    s.acc += event.delta.y;
+    const need = s.steps ? 60 : 20;
+    if (Math.abs(s.acc) < need || now - s.last < 100) return;
+    s.acc -= Math.sign(s.acc) * need;
+    s.steps++;
+    s.last = now;
+    this.fire(event.delta.y > 0 ? "tab.prev" : "tab.next");
   }
 
   command(command) {
@@ -238,6 +263,17 @@ export default class NightCityTabs extends View {
     const shown = shownTabs(space);
     this.ensureCursor(shown);
     const matched = open ? shown.filter((tab) => demoMatch(tab.name, open.name)) : [];
+    const activeTab = matched.length ? matched[0] : shown.find((tab) => tab.active) ?? null;
+    const activeIndex = activeTab ? shown.indexOf(activeTab) : -1;
+    const cursorIndex = this.handle.is_focused() && this.cursor ? shown.findIndex((tab) => tab.id === this.cursor) : -1;
+    if (activeIndex !== this.revealIndex) {
+      this.revealIndex = activeIndex;
+      if (activeIndex >= 0) this.scroll.scroll_to_item(activeIndex);
+    }
+    if (cursorIndex !== this.cursorIndex) {
+      this.cursorIndex = cursorIndex;
+      if (cursorIndex >= 0) this.scroll.scroll_to_item(cursorIndex);
+    }
     const stop = (_event, cx) => cx.stop_propagation();
     // `herdr-app check` renders without a window, so window() can be null there.
     const w = window() ?? {};
@@ -290,14 +326,22 @@ export default class NightCityTabs extends View {
           .rounded_t(5).rounded_b(9).border(2).border_color(C.ink)));
     };
 
-    const tabs = div().id("nc-tabs").relative().flex_1().min_w(0).h(44).overflow_hidden()
+    // The strip is 44 high so the tabs' upper wire, cursor ring and active border are not clipped
+    // by the scrolling area; only the tabs themselves scroll, and the `+` stays outside.
+    const tabScroll = div().id("nc-tab-scroll").min_w(0).h(44).pt(14).px(3).flex().flex_row().items_start().gap(4)
+      .overflow_x_scrollbar().track_scroll(this.scroll)
+      .on_size_change((_size, cx) => { if (activeIndex >= 0) { this.scroll.scroll_to_item(activeIndex); cx.notify(); } })
+      .children(shown.map(tabBody));
+
+    const tabs = div().id("nc-tabs").relative().flex_1().min_w(0).h(44)
       .on_mouse_up("left", () => { this.pressed = null; })
-      .on_scroll_wheel((event) => { if (Math.abs(event.delta.y) >= 1) this.fire(event.delta.y > 0 ? "tab.prev" : "tab.next"); })
+      .on_scroll_wheel((event) => this.wheel(event))
       .child(div().absolute().left(0).top(9).w_full().h(1).bg("#d8d0e233"))
-      .child(div().absolute().left(0).top(14).flex().flex_row().gap(4)
-        .children(shown.map(tabBody))
-        .child(control("nc-tab-new", svg(icon("plus")).size(14).text_color(C.ink2),
-          () => { if (!this.demo) openOverlay({ mod: "new-menu", kind: "popup", width: 250, height: 512 }); })));
+      .child(div().flex().flex_row().items_start().min_w(0).h(44)
+        .child(tabScroll)
+        .child(div().pt(14).ml(4).flex_none()
+          .child(control("nc-tab-new", svg(icon("plus")).size(14).text_color(C.ink2),
+            () => { if (!this.demo) openOverlay({ mod: "new-menu", kind: "popup", width: 250, height: 512 }); }))));
 
     const notice = this.demo ? null : shared("night-city.notice");
     const noticeWords = words(lang);

@@ -160,9 +160,14 @@ export default class NightCityEditor extends View {
   }
 
   ownPane() {
+    // A mod pane gets no pane id in its props, so once the keyboard leaves it only this memory still names it.
+    const kept = panes().find((p) => p.pane === this.paneId);
+    if (kept?.mod === "night-city-editor") return kept;
     const id = (props() ?? {}).pane ?? focused()?.pane;
     const pane = panes().find((p) => p.pane === id);
-    return pane?.mod === "night-city-editor" ? pane : null;
+    if (pane?.mod !== "night-city-editor") return null;
+    this.paneId = pane.pane;
+    return pane;
   }
 
   toTab(cx) {

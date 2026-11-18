@@ -6,7 +6,10 @@ import { View, div, image, svg } from "gpui-kit";
 import {
   exec, appHome, run, props, shared, setShared, nextCommand, openOverlay, closeOverlay,
   terminals, agents, panes, spaces, focused, settings, readTextFile, writeTextFile,
+  // The bare `window` in this module is the gpui host global (paint_path, viewport_size).
+  window as windowInfo,
 } from "herdr";
+import * as herdrApi from "herdr";
 import { C, UI_ART, MONO, SHARED_KEY, QUERY_KEY, ACCOUNTS_KEY, words, paneTarget, tintOf, icon, gradient, kbd, segs, dot, portrait, ago, textWidth, clipText } from "./neon.js";
 import {
   parseScan, buildItems, byUrgency, assignSeats, castOf, countsOf, tokensOf, matches, cycle, liveOf, terminalOf, focusMatch,
@@ -135,6 +138,16 @@ const r2 = (n) => Math.round(n * 100) / 100;
 const stop = (_event, cx) => cx.stop_propagation();
 const isHttp = (url) => typeof url === "string" && /^https?:\/\//.test(url);
 
+// An older Herdr has no `checking` export, and a named import would take the whole mod down.
+const checking = () => typeof herdrApi.checking === "function" && herdrApi.checking() === true;
+
+/** The command that hands a URL to the platform's default handler. */
+export function openerFor(url, platform) {
+  if (platform === "linux") return ["xdg-open", [url]];
+  if (platform === "windows") return ["rundll32", ["url.dll,FileProtocolHandler", url]];
+  return ["open", [url]];
+}
+
 /** The ticker's cells with the widths they are drawn at: there is no text measuring, so the tape's length is decided here. */
 export function tapeOf(items, idle = false) {
   const cells = items.filter((item) => idle || item.status !== "idle").map((item) => {
@@ -226,6 +239,7 @@ export default class Street extends View {
       const lo = this.width / (2 * this.scale);
       this.cam = { x0: lo, x1: lo, t0: now, dur: 400 };
     }
+    if (checking()) return;
     const pick = typeof given.pick === "string" ? given.pick : null;
     if (this.demo && pick) {
       cx.timer.after(60, (later) => {
@@ -689,16 +703,20 @@ export default class Street extends View {
   openPages(item, cx) {
     if (!item || !item.pages.length) { this.flash(words(this.lang).noPage); return; }
     if (this.demo) return;
-    cx.spawn(async () => {
-      for (const page of item.pages) await this.openPage(page);
+    cx.spawn(async (cx) => {
+      for (const page of item.pages) await this.openPage(page, cx);
     });
   }
 
-  async openPage(page) {
+  async openPage(page, cx) {
     if (this.demo || !page?.url) return;
     let opened = false;
-    try { opened = (await exec("open", [page.url])).code === 0; } catch {}
-    if (!opened) return;
+    try { opened = (await exec(...openerFor(page.url, (windowInfo() ?? {}).platform))).code === 0; } catch {}
+    if (!opened) {
+      this.flash(words(this.lang).openFailed);
+      cx?.notify();
+      return;
+    }
     try { if (page.files?.length) await exec("rm", ["-f", ...page.files]); } catch {}
   }
 
@@ -715,7 +733,7 @@ export default class Street extends View {
       ?? this.items.find((item) => item.id === oldest.sessionId);
     if (owner) this.select(owner.id);
     if (this.demo) return;
-    cx.spawn(async () => { await this.openPage(oldest); });
+    cx.spawn(async (cx) => { await this.openPage(oldest, cx); });
   }
 
   jumpTo(kind) {
@@ -813,7 +831,14 @@ export default class Street extends View {
 
   openLink(url, cx) {
     if (this.demo || !isHttp(url)) return;
-    cx.spawn(async () => { try { await exec("open", [url]); } catch {} });
+    cx.spawn(async (cx) => {
+      let opened = false;
+      try { opened = (await exec(...openerFor(url, (windowInfo() ?? {}).platform))).code === 0; } catch {}
+      if (!opened) {
+        this.flash(words(this.lang).openFailed);
+        cx.notify();
+      }
+    });
   }
 
   menuRows(item) {

@@ -20,7 +20,7 @@ export function demoModel() {
   return {
     current: "studio",
     globalDefault: "studio",
-    session: null,
+    session: { id: "8f1c2d4e-5a6b-4c7d-9e0f-1a2b3c4d5e6f", cwd: "/home/demo/projects/neon-sign" },
     accounts: [
       {
         name: "studio", email: "studio@example.com", label: null, plan: "Max 20x",
