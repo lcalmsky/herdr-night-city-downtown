@@ -327,9 +327,10 @@ export default class NightCityTabs extends View {
     };
 
     // The strip is 44 high so the tabs' upper wire, cursor ring and active border are not clipped
-    // by the scrolling area; only the tabs themselves scroll, and the `+` stays outside.
+    // by the scrolling area; only the tabs themselves scroll, and the `+` stays outside. A painted
+    // scrollbar would make the area take the whole strip and push the `+` to its far end.
     const tabScroll = div().id("nc-tab-scroll").min_w(0).h(44).pt(14).px(3).flex().flex_row().items_start().gap(4)
-      .overflow_x_scrollbar().track_scroll(this.scroll)
+      .overflow_x_scroll().track_scroll(this.scroll)
       .on_size_change((_size, cx) => { if (activeIndex >= 0) { this.scroll.scroll_to_item(activeIndex); cx.notify(); } })
       .children(shown.map(tabBody));
 
